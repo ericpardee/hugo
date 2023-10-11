@@ -1,1 +1,13 @@
+# For ericpardee.com Hugo site
+/ericpardee.com/public/
+/ericpardee.com/resources/
+
+# Dependency directories
+/node_modules/
+
+# macOS
 .DS_Store
+
+# IDEs and editors
+.vscode/
+*.swp
