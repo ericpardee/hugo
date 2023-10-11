@@ -1,3 +1,11 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://ericpardee.com'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'ericpardee.com'
+theme = 'hugo-book'
+
+[deployment]
+
+[[deployment.targets]]
+# Name for this target.
+name = "ericpardee.com"
+URL = "s3://ericpardee.com?region=us-west-2"

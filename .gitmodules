@@ -1,0 +1,6 @@
+[submodule "ericpardee.com/themes/ananke"]
+	path = ericpardee.com/themes/ananke
+	url = https://github.com/theNewDynamic/gohugo-theme-ananke.git
+[submodule "ericpardee.com/themes/hugo-book"]
+	path = ericpardee.com/themes/hugo-book
+	url = https://github.com/alex-shpak/hugo-book
