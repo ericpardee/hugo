@@ -1,32 +1,38 @@
 ---
-title: M365 to Google Calendar Sync
+title: Unifying M365 and Google Calendars
 authors: [{'name': 'Eric Pardee'}]
 published: Tue, 15 Jun 2021 07:45:38 GMT
 ---
 
+# Integrating Outlook and Google Calendars
 
-# Microsoft Office 365 Calendar to Google Workspace Calendar Sync
+With working remotely, flexibility becomes a cornerstone of our professional lives.\
+Integration is not just a convenience—it's an imperative.\
+Why not integrate your professional Outlook Calendar into personal Google Calendar?
 
-Having multiple calendars with different events on each one is a sure path to double bookings. Get organized and reliable by subscribing to your Outlook Calendar in Google Calendars.
+![Unifying M365 and Google Calendars](/blog-post6.webp-1.jpg)
 
-![Microsoft Office 365 Calendar to Google Workspace Calendar Sync](/blog-post6.webp-1.jpg)
+## Work Meets Personal
 
-Complete hypothetical here but imagine that you use Google Workspace for your email and calendar but your employer uses Microsoft Office 365/Outlook.
+Imagine a scenario: You're navigating Google Workspace for personal matters while your professional life revolves around Microsoft Office 365/Outlook. Ideally, wouldn't you prefer a merged view of your work and personal events?
 
-Let’s say hypothetically that you wanted to be able to see your upcoming work calendar _together_ with your personal calendar such that you can _look in one place_ to see what time you have events throughout the day. Can this even be done?
+In my quest for integration, I initially experimented with [sharing the Outlook Calendar via an ICS link](https://www.howtogeek.com/435975/how-to-show-an-outlook-calendar-in-google-calendar/).
 
-This is especially applicable when working from home, while also occasionally working flexible hours, sometimes outside of traditional business hours. Or like when you're trying to book a Doctor's appointment during the workweek.
+A limitation surfaced. [Google's syncing mechanism operates in a 6 to 24-hour window](https://webapps.stackexchange.com/questions/6313/how-often-does-google-calendar-update-its-other-calendar-feeds), casting shadows of doubt over the real-time authenticity of the events. Consequently, I often found myself reverting to the dual-calendar check, defeating the very objective.
 
-Originally I found [this method of sharing your Outlook Calendar](https://www.howtogeek.com/435975/how-to-show-an-outlook-calendar-in-google-calendar/) using an [ICS link](https://en.wikipedia.org/wiki/ICalendar) however [Google only allows you to sync every 6 to 24 hours](https://webapps.stackexchange.com/questions/6313/how-often-does-google-calendar-update-its-other-calendar-feeds). This **delay** makes the validity of the events in the calendar suspect so in practice, I ended up still checking both calendars, which kind of defeats the purpose.
+## Discovering the Perfect Sync Tool
 
-Fortunately, [someone has written a simple script](https://github.com/derekantrican/Google-Apps-Script-Library), a script that reminds me of [a sync script that I wrote while at Atlas Digital that syncs Sage Time and Attendance (Insperity TimeStar) time-off events to Google Calendar](https://github.com/epardee/timestar-to-gcal).
+Fortune favors the persistent. I happened upon [a promising script](https://github.com/derekantrican/Google-Apps-Script-Library). This code reminded me of a [synchronization script from my Atlas Digital days, which aligned Sage Time and Attendance events with Google Calendar](https://github.com/epardee/timestar-to-gcal).
 
-At first, I was suspect, the [Stack Exchange post that referenced the script article](https://webapps.stackexchange.com/questions/6313/how-often-does-google-calendar-update-its-other-calendar-feeds) had comments from someone in 2019 that said the [Google Apps Script](https://developers.google.com/apps-script/) was not feature-complete. So I did some research and it turns out that it is now a feature-rich application and I gave it a shot. Although I wouldn’t mind running this as a function in Kubernetes, as a scheduled cronjob, similar to [my Craigslist renew job](https://www.ericpardee.com/selling-smart-on-craigslist/), I find that [this Google Apps Script](https://script.google.com/home/projects/1BOk8MDLbLaHh6SwG1M1tsgNXjkcC-79LE0QoipRuTDxbO3fMVvqoROQD/edit) is sufficient.
+Initial skepticism about this script arose from a [2019 Stack Exchange commentary](https://webapps.stackexchange.com/questions/6313/how-often-does-google-calendar-update-its-other-calendar-feeds) which highlighted the [Google Apps Script](https://developers.google.com/apps-script/) as incomplete. Yet, delving deeper, I discovered its evolution into a feature-loaded tool. While I toyed with the idea of adapting this into a Kubernetes function, akin to [my Craigslist renew routine](https://www.ericpardee.com/selling-smart-on-craigslist/), the [current Google Apps Script](https://script.google.com/home/projects/1BOk8MDLbLaHh6SwG1M1tsgNXjkcC-79LE0QoipRuTDxbO3fMVvqoROQD/edit) stood robust.
 
-And let me tell you it works, really well! I think a sync every 15 minutes is sufficient. But what’s great about this, I have it set up such that it will delete events, so and I don’t have any work events from the past, all I’m seeing on my personal calendar is work future events, which is all I need this for planning.
+## Successful Integration
 
-![Microsoft Office 365 Calendar to Google Workspace Calendar Sync](/cal-script.webp.jpg)
+The outcome? Absolute synchronization delight! With updates every 15 minutes and an auto-clear function for past work events, my personal calendar now exclusively displays future work-related tasks, streamlining my planning process.
 
-If this is your situation, give it a shot!
-[https://script.google.com/home/projects/1BOk8MDLbLaHh6SwG1M1tsgNXjkcC-79LE0QoipRuTDxbO3fMVvqoROQD/edit](https://script.google.com/home/projects/1BOk8MDLbLaHh6SwG1M1tsgNXjkcC-79LE0QoipRuTDxbO3fMVvqoROQD/edit)\
-(The installation instructions are at the top of the script, it's pretty straightforward)
+![Streamlined Calendar Syncing Process](/cal-script.webp.jpg)
+
+Confronted with similar scheduling challenges?\
+Embark on this integration journey:
+[Google Apps Script Integration Guide](https://script.google.com/home/projects/1BOk8MDLbLaHh6SwG1M1tsgNXjkcC-79LE0QoipRuTDxbO3fMVvqoROQD/edit)\
+(Begin the setup using the clear instructions provided at the start of the script.)
