@@ -4,34 +4,29 @@ authors: [{'name': 'Eric Pardee'}]
 published: 2023-10-12
 ---
 
-# Markdown Resume
+# Crafting the Perfect Resume with Markdown
 
-Creating multiple versions of resumes for different roles you apply for in Microsoft Word or Google Docs, keeping track of the differences, syncing some differences, publishing to PDF, etc. It's a recipe for disaster.
-WHen i found myself in this mess, I found a way out with Markdown, Pandoc, some CSS and git magic.
+Navigating the complexities of tailoring resumes for distinct roles using tools like Microsoft Word or Google Docs can be a treacherous journey. Juggling multiple versions, ensuring consistent updates, and the final step of exporting to PDF can lead to inadvertent errors and inconsistencies. It was during one such chaotic episode that I stumbled upon the magic of Markdown, combined with Pandoc, CSS, and a sprinkle of git.
 
-![Building Block Resume](/building-block-resume.png)
-DALL·E 3: _"Graphic for a blog post representing a resume, where each section constructed from building blocks, like a modular resume"_
+![Modular Resume Concept](/building-block-resume.png)
+DALL·E 3: _"Graphic for a blog post representing a resume, where each section constructed from building blocks, like a modular resume."_
 
-## The Problem
+## The Dilemma
 
-I was applying to different jobs but the role of each job can vary greatly.
+In my exploration of potential new professional horizons, I was often required to modify my resume to cater to the specific nuances of each role. This led me to a labyrinth of resume versions—stored on Dropbox, OneDrive, and my local computer. The challenge was not just in choosing the right version but also in maintaining a consistent and error-free document.
 
-I clumsily would open a copy of my resume (which should I use, the one on Dropbox, OneDrive, my local computer...), make some modifications, personalizations, 'print to pdf', then ship off the PDF.
+To my dismay, I realized that I had sent out resumes riddled with typos and formatting inconsistencies. The embarrassment was palpable.
 
-However, after a while, the drift in that/those Word Doc(s) was bad... Like really bad. Somehow there were typos. I'd forget if this version had the latest changes, etc.
+## The Epiphany
 
-I noticed that I recently shipped some resumes with typos, formatting messes, etc. and it was embarrassing.
+In true 2023 fashion, I turned to my trusted friend, ChatGPT, for guidance.\
+I prompted:
 
-## There Must Be a Better Way
-
-Like any normal person in 2023, I did the sane thing and asked ChatGPT what to do.
-
-I started with:
-> Is there building block resume creation software?
+> "Is there a software that allows for modular resume creation?"
 >
-> For example, I want to cater my resume to the role but keep certain parts (blocks) the same
+> "I aim to tailor my resume for specific roles while retaining certain consistent sections or blocks."
 
-After a few back and forths, I liked the idea of using Markdown... Hell, this here very blog is written in markdown. With Markdown, I can keep things clean, I can make the resume modular. For example, each section:
+The conversation that ensued introduced me to the idea of using Markdown, CSS, wkhtmltopdf and Pandoc. Interestingly, the very blog you're reading is penned in Markdown. This simple markup language allowed me to deconstruct my resume into distinct sections:
 
 - Heading
 - Experience
@@ -39,17 +34,15 @@ After a few back and forths, I liked the idea of using Markdown... Hell, this he
 - Certifications
 - Education
 
-Each section can be their own little Markdown file and then I can use pandoc to combine them.
+Each of these segments became individual Markdown files. Using Pandoc, I could seamlessly merge them. Moreover, I could introduce dynamic content, such as customizing my email based on the recipient. A judicious use of `Makefile` and `envsubst` made this a breeze.
 
-I can also do things like add dynamic content. For example, I like to use different emails depending on who I am sharing my resume with. With a little `Makefile` and some `envsubst`, voila.
+While the idea was innovative, I wasn't the pioneer. I drew inspiration from Mr. Vid Luther's approach, as seen here: <https://luther.io/markdown-resume/>. I adapted his GitHub repository, segmenting his `resume.md` into distinct markdown sections, and incorporated a Makefile to craft the ultimate PDF resume. By leveraging git, I can create a branch for each role and a tag for every job application.
 
-Of course someone else had already thought of this and I respectfully stole a lot of my work from Mr. Vid Luther: <https://luther.io/markdown-resume/>. I essentially cloned his GitHub repo, divided up his `resume.md` into markdown sections, and added a Makefile to compose the final PDF.
+## The Revelation
 
-## The Final Result
+The transformation has been remarkable.
 
-I love it.
-
-I can have resumes for all the potential roles I'd entertain at some point:
+Now, I have the ability to tailor resumes for an array of roles I'm passionate about:
 
 - Director of SRE / DevOps
 - SRE / DevOps Manager
@@ -63,4 +56,6 @@ I can have resumes for all the potential roles I'd entertain at some point:
 - Tech Lead, DevOps Infra
 - AI Solutions Engineer
 
-But now I can keep these organized, easily updated and no longer worry about MS Word issues or having Word installed. I could even add GitHub actions to do the rendering outside my box if the need arises.
+These are not just organized and up-to-date, but they're also free from the earlier hassles of software compatibility, installation or licensing woes. The possibility of integrating GitHub actions for external rendering is an exciting avenue I might explore soon.
+
+In a world where first impressions matter, having a polished and tailored resume can make all the difference. And with Markdown, I've found my perfect tool.
