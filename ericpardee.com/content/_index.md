@@ -6,6 +6,7 @@ type: docs
 # Welcome
 
 {{< columns >}}
+
 ## About
 
 In the dawn of the 2000s, I was the advocate, urging everyone to craft their own websites to communicate openly. I introduced friends to the world of email and nudged them to join the likes of 'Friendster'. However, as the internet evolved into a voracious data harvester, my enthusiasm waned.
@@ -15,6 +16,7 @@ Yet, the desire to share persists. I've chosen to post my evolving spectrum of i
 <--->
 
 ## Me
+
 ![me](/me.jpg)
 {{< /columns >}}
 

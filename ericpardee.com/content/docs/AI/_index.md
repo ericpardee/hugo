@@ -1,5 +1,5 @@
 ---
 bookCollapseSection: true
-title: IT & Automation
-weight: 2
+title: AI
+weight: 1
 ---
