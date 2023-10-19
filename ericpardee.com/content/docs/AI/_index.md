@@ -1,5 +1,5 @@
 ---
 bookCollapseSection: true
-title: AI
+title: GenAI - LLMs
 weight: 1
 ---
