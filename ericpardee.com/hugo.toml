@@ -12,3 +12,6 @@ theme = 'hugo-book'
 name = "ericpardee.com"
 URL = "s3://ericpardee-hugo/?region=us-west-2"
 cloudFrontDistributionID = "E2ASCQGV6D73JG"
+
+[params]
+BookSearch = false
