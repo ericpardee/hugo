@@ -1,6 +1,7 @@
 ---
 title: Welcome
 type: docs
+BookToC: false
 ---
 
 # Welcome
